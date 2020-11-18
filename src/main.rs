@@ -3,7 +3,6 @@ use std::process::Command;
 
 fn main() {
     let mut args = args();
-    println!("Path: {:?}", args.next().unwrap());
     let mut command = Command::new("7z");
     // loop {
     //     if let Some(a) = args.next() {
@@ -20,7 +19,6 @@ fn main() {
     //     }
     // }
     while let Some(a) = args.next() {
-        println!("Arg: {:?}", a);
         if a.starts_with("-") && !a.starts_with("--") {
             // Special processing
             match &a[..] {
